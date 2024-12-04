@@ -6,14 +6,20 @@ import { environment } from '../../../environments/environment.development';
   providedIn: 'root'
 })
 export class AuthService {
+
   private baseUrl=environment.urlServidor
   private http=inject(HttpClient)
-  constructor(){}
-  loginConNest(credenciales:any){
-    return this.http.post<any>(`${this.baseUrl}/auth/login`, credenciales)
+  constructor() { }
+
+  loginConNest(credenciales:any)
+  {
+    return this.http.post<any>(`${this.baseUrl}/auth/login`,credenciales)
   }
 
-  registroConNest(datos: any){
+  registroConNest(datos:any)
+  {
     return this.http.post<any>(`${this.baseUrl}/register`, datos)
   }
 }
+
+
